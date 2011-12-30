@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * TODO: Enter file description here.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function services_acl_permission() {
+  return array(
+    'administer services acl' => array(
+      'title' => t('Administer Services ACL'),
+      'description' => t('Perform administration tasks for Services ACL.'),
+    ),
+  );
+}
+
+/**
+ * Implementation of hook_services_authentication().
+ */
+function services_acl_services_authentication_info() {
+  return array(
+    'file'             => 'services_acl.inc',
+    'title'            => t('Resources Roles Access Control List'),
+    'description'      => t('Allow you to restrict Resources Access specifically by roles.'),
+    'security_settings' => '_services_acl_security_settings',
+    '_services_security_settings_validate' => '_services_acl_security_settings_validate',
+    '_services_security_settings_submit' => '_services_acl_security_settings_submit',
+    'authenticate_call' => '_services_acl_authenticate_call',
+    'controller_settings' => '_services_acl_controller_settings',
+  );
+}
+
+/**
+ * Implements hook_theme().
+ */
+function services_acl_theme($existing, $type, $theme, $path) {
+
+  return array(
+
+    'resources_roles_permissions' => array(
+      'variables' => array(
+        'form' => NULL, 'resources' => NULL, 'roles' => NULL
+      ),
+      'file' => 'services_acl.inc'
+    ),
+  );
+}

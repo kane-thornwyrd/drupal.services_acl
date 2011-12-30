@@ -1,0 +1,5 @@
+name = Services - ACL
+description = Allow to restrict resources access by roles. http://drupal.org/node/1339190 ;)
+dependencies[] = services
+core = 7.x
+package = "Services - authentication"

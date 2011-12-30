@@ -1,0 +1,17 @@
+/*
+    Document   : services_acl.main
+    Created on : 21 déc. 2011, 12:47:48
+    Author     : jean-cédric Thérond
+    Description:
+        Different CSS settings for this module.
+*/
+
+.services-acl-block .form-type-checkboxes{
+
+  display: inline-table;
+  padding: 0 2em;
+}
+.services-acl-block .form-type-checkboxes>label{
+  font-weight: 900;
+  border-bottom: 1px solid #000;
+}
